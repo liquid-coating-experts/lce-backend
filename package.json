@@ -4,9 +4,6 @@
   "description": "A starter for Medusa projects.",
   "author": "Sebastian Rindom <skrindom@gmail.com>",
   "license": "MIT",
-  "engines": {
-    "npm": ">=9.0.0 <10.0.0"
-  },
   "keywords": [
     "sqlite",
     "postgres",
