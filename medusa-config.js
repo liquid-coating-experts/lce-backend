@@ -76,14 +76,14 @@ const modules = {
   eventBus: {
     resolve: "@medusajs/event-bus-redis",
     options: {
-      redisUrl: process.env.EVENTS_REDIS_URL,
+      redisUrl: process.env.REDIS_URL,
     },
   },
 
   cacheService: {
     resolve: "@medusajs/cache-redis",
     options: {
-      redisUrl: process.env.EVENTS_REDIS_URL,
+      redisUrl: process.env.REDIS_URL,
     },
   },
 };
