@@ -79,6 +79,7 @@ const modules = {
       redisUrl: process.env.EVENTS_REDIS_URL,
     },
   },
+
   cacheService: {
     resolve: "@medusajs/cache-redis",
     options: {
