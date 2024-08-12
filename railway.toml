@@ -5,4 +5,4 @@ builder = "NIXPACKS"
 nixPkgs = ["nodejs", "nodePackages.npm"]
 
 [build.nixpacksPlan.phases.install]
-cmds=["npm install --legacy-peer-deps", "CMD sleep 3"]
+cmds=["npm install --legacy-peer-deps", "sleep 3"]
