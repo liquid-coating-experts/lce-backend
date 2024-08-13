@@ -93,14 +93,14 @@ const modules = {
 const projectConfig = {
   jwtSecret: process.env.JWT_SECRET,
   cookieSecret: process.env.COOKIE_SECRET,
-  store_cors: process.env.STORE_CORS,
+  store_cors: STORE_CORS,
   database_type: "postgres",
-  database_url: process.env.DATABASE_URL,
-  admin_cors: process.env.ADMIN_CORS,
+  database_url: DATABASE_URL,
+  admin_cors: ADMIN_CORS,
   worker_mode: process.env.MEDUSA_WORKER_MODE,
   // Uncomment the following lines to enable REDIS
-  redis: process.env.REDIS_URL,
-  redis_url: process.env.REDIS_URL,
+  redis: REDIS_URL,
+  redis_url: REDIS_URL,
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule} */
