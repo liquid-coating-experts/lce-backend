@@ -36,12 +36,7 @@ const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 const plugins = [
   `medusa-fulfillment-manual`,
   `medusa-payment-manual`,
-  {
-    resolve: `@medusajs/file-local`,
-    options: {
-      upload_dir: "uploads",
-    },
-  },
+
   // {
   //   resolve: `medusa-file-minio`,
   //   options: {
@@ -51,14 +46,20 @@ const plugins = [
   //     secret_access_key: process.env.MINIO_SECRET_KEY,
   //   },
   // },
+  // {
+  //   resolve: `medusa-file-spaces`,
+  //   options: {
+  //     spaces_url: process.env.SPACE_URL,
+  //     bucket: process.env.SPACE_BUCKET,
+  //     endpoint: process.env.SPACE_ENDPOINT,
+  //     access_key_id: process.env.SPACE_ACCESS_KEY_ID,
+  //     secret_access_key: process.env.SPACE_SECRET_ACCESS_KEY,
+  //   },
+  // },
   {
-    resolve: `medusa-file-spaces`,
+    resolve: `@medusajs/file-local`,
     options: {
-      spaces_url: process.env.SPACE_URL,
-      bucket: process.env.SPACE_BUCKET,
-      endpoint: process.env.SPACE_ENDPOINT,
-      access_key_id: process.env.SPACE_ACCESS_KEY_ID,
-      secret_access_key: process.env.SPACE_SECRET_ACCESS_KEY,
+      upload_dir: "uploads/2024",
     },
   },
 
@@ -93,10 +94,12 @@ const projectConfig = {
   jwtSecret: process.env.JWT_SECRET,
   cookieSecret: process.env.COOKIE_SECRET,
   store_cors: process.env.STORE_CORS,
+  database_type: "postgres",
   database_url: process.env.DATABASE_URL,
   admin_cors: process.env.ADMIN_CORS,
   worker_mode: process.env.MEDUSA_WORKER_MODE,
   // Uncomment the following lines to enable REDIS
+  redis: process.env.REDIS_URL,
   redis_url: process.env.REDIS_URL,
 };
 
