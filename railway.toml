@@ -2,7 +2,7 @@
 builder = "NIXPACKS"
 
 [build.nixpacksPlan.phases.setup]
-nixPkgs = ["nodejs", "nodePackages.npm"]
+nixPkgs = ["nodejs", "yarn"]
 
 [build.nixpacksPlan.phases.install]
-cmds=["npm install --legacy-peer-deps"]
+cmds=["yarn install"]
