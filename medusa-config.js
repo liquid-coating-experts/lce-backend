@@ -103,12 +103,12 @@ const projectConfig = {
   jwtSecret: process.env.JWT_SECRET,
   cookieSecret: process.env.COOKIE_SECRET,
   store_cors: STORE_CORS,
-  database_type: "postgres",
-  database_url: DATABASE_URL,
+  // database_type: "postgres",
+  // database_url: DATABASE_URL,
   admin_cors: ADMIN_CORS,
   worker_mode: process.env.MEDUSA_WORKER_MODE,
   // Uncomment the following lines to enable REDIS
-  redis: REDIS_URL,
+  // redis: REDIS_URL,
   redis_url: process.env.REDIS_URL,
 };
 
