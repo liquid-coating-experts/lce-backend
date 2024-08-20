@@ -113,6 +113,7 @@ const projectConfig = {
   // Uncomment the following lines to enable REDIS
   redis: REDIS_URL,
   redis_url: process.env.REDIS_URL,
+  database_extra: { ssl: { rejectUnauthorized: false } },
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule} */
@@ -120,5 +121,4 @@ module.exports = {
   projectConfig,
   plugins,
   modules,
-  database_extra: { ssl: { rejectUnauthorized: false } },
 };
