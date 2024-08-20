@@ -28,19 +28,22 @@ const ADMIN_CORS =
 // CORS to avoid issues when consuming Medusa from a client
 const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000";
 
-// const DATABASE_URL = process.env.DATABASE_URL || "postgres://localhost/medusa-store";
-
 const DB_USERNAME = process.env.DB_USERNAME;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_HOST = process.env.DB_HOST;
 const DB_PORT = process.env.DB_PORT;
 const DB_DATABASE = process.env.DB_DATABASE;
 
-const DATABASE_URL =
-  `postgres://${DB_USERNAME}:${DB_PASSWORD}` +
-  `@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`;
+// const DATABASE_URL =
+// `postgres://${DB_USERNAME}:${DB_PASSWORD}` +
+// `@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`;
 
-// const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
+const DATABASE_URL =
+  process.env.DATABASE_URL ||
+  "postgres://localhost/medusa-store" ||
+  `postgres://${DB_USERNAME}:${DB_PASSWORD}` +
+    `@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`;
+const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 
 const plugins = [
   `medusa-fulfillment-manual`,
@@ -104,11 +107,11 @@ const projectConfig = {
   cookieSecret: process.env.COOKIE_SECRET,
   store_cors: STORE_CORS,
   database_type: "postgres",
-  // database_url: DATABASE_URL,
+  database_url: DATABASE_URL,
   admin_cors: ADMIN_CORS,
   worker_mode: process.env.MEDUSA_WORKER_MODE,
   // Uncomment the following lines to enable REDIS
-  // redis: REDIS_URL,
+  redis: REDIS_URL,
   redis_url: process.env.REDIS_URL,
 };
 
