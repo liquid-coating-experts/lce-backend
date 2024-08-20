@@ -55,22 +55,22 @@ const plugins = [
   //     secret_access_key: process.env.MINIO_SECRET_KEY,
   //   },
   // },
-  // {
-  //   resolve: `medusa-file-spaces`,
-  //   options: {
-  //     spaces_url: process.env.SPACE_URL,
-  //     bucket: process.env.SPACE_BUCKET,
-  //     endpoint: process.env.SPACE_ENDPOINT,
-  //     access_key_id: process.env.SPACE_ACCESS_KEY_ID,
-  //     secret_access_key: process.env.SPACE_SECRET_ACCESS_KEY,
-  //   },
-  // },
   {
-    resolve: `@medusajs/file-local`,
+    resolve: `medusa-file-spaces`,
     options: {
-      upload_dir: "uploads/2024",
+      spaces_url: process.env.SPACE_URL,
+      bucket: process.env.SPACE_BUCKET,
+      endpoint: process.env.SPACE_ENDPOINT,
+      access_key_id: process.env.SPACE_ACCESS_KEY_ID,
+      secret_access_key: process.env.SPACE_SECRET_ACCESS_KEY,
     },
   },
+  // {
+  //   resolve: `@medusajs/file-local`,
+  //   options: {
+  //     upload_dir: "uploads/2024",
+  //   },
+  // },
 
   // To enable the admin plugin, uncomment the following lines and run `yarn add @medusajs/admin`
   {
@@ -103,12 +103,12 @@ const projectConfig = {
   jwtSecret: process.env.JWT_SECRET,
   cookieSecret: process.env.COOKIE_SECRET,
   store_cors: STORE_CORS,
-  // database_type: "postgres",
-  // database_url: DATABASE_URL,
+  database_type: "postgres",
+  database_url: DATABASE_URL,
   admin_cors: ADMIN_CORS,
   worker_mode: process.env.MEDUSA_WORKER_MODE,
   // Uncomment the following lines to enable REDIS
-  // redis: REDIS_URL,
+  redis: REDIS_URL,
   redis_url: process.env.REDIS_URL,
 };
 
