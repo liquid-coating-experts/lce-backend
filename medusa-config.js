@@ -22,8 +22,9 @@ try {
 } catch (e) {}
 
 // CORS when consuming Medusa from admin
-const ADMIN_CORS =
-  process.env.ADMIN_CORS || "http://localhost:9000,http://localhost:9001";
+const ADMIN_CORS = process.env.ADMIN_CORS;
+// test uncommented when pushing to github:
+// || "http://localhost:9000,http://localhost:9001";
 
 // CORS to avoid issues when consuming Medusa from a client
 const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000";
@@ -34,15 +35,14 @@ const DB_HOST = process.env.DB_HOST;
 const DB_PORT = process.env.DB_PORT;
 const DB_DATABASE = process.env.DB_DATABASE;
 
-// const DATABASE_URL =
-// `postgres://${DB_USERNAME}:${DB_PASSWORD}` +
-// `@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`;
-
+// todo uncomment-out when pushing to github:
 const DATABASE_URL =
-  // process.env.DATABASE_URL ||
-  // "postgres://localhost/medusa-store" ||
   `postgres://${DB_USERNAME}:${DB_PASSWORD}` +
   `@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`;
+
+// todo comment-out when pushing to github:
+// const DATABASE_URL =
+//   process.env.DATABASE_URL || "postgres://localhost/medusa-store";
 
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 
@@ -59,6 +59,7 @@ const plugins = [
   //     secret_access_key: process.env.MINIO_SECRET_KEY,
   //   },
   // },
+  // todo: uncomment before pushing to github
   {
     resolve: `medusa-file-spaces`,
     options: {
@@ -69,6 +70,7 @@ const plugins = [
       secret_access_key: process.env.SPACE_SECRET_ACCESS_KEY,
     },
   },
+  // todo uncomment before pushing to github
   // {
   //   resolve: `@medusajs/file-local`,
   //   options: {
@@ -114,6 +116,7 @@ const projectConfig = {
   // Uncomment the following lines to enable REDIS
   redis: REDIS_URL,
   redis_url: process.env.REDIS_URL,
+  // todo uncomment when pushing to github:
   database_extra: { ssl: { rejectUnauthorized: false } },
 };
 

@@ -5,13 +5,23 @@ import {
   ProductRepository as MedusaProductRepository,
 } from "@medusajs/medusa/dist/repositories/product";
 
-export const ProductRepository = dataSource.getRepository(Product).extend({
+export const ProductRepository = dataSource.getRepository(Product).extend(
   // it is important to spread the existing repository here.
   // Otherwise you will end up losing core properties.
   // you also update the target to the extended entity
-  ...Object.assign(MedusaProductRepository, { target: Product }),
+  Object.assign(MedusaProductRepository, { target: Product })
 
   // you can add other customizations as well...
-});
+);
 
 export default ProductRepository;
+
+// rplaced below code with above:
+// export const ProductRepository = dataSource.getRepository(Product).extend({
+//   // it is important to spread the existing repository here.
+//   // Otherwise you will end up losing core properties.
+//   // you also update the target to the extended entity
+//   ...Object.assign(MedusaProductRepository, { target: Product }),
+
+//   // you can add other customizations as well...
+// });
