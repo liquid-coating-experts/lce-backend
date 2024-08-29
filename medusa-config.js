@@ -36,13 +36,13 @@ const DB_PORT = process.env.DB_PORT;
 const DB_DATABASE = process.env.DB_DATABASE;
 
 // todo uncomment-out when pushing to github:
-// const DATABASE_URL =
-//   `postgres://${DB_USERNAME}:${DB_PASSWORD}` +
-//   `@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`;
+const DATABASE_URL =
+  `postgres://${DB_USERNAME}:${DB_PASSWORD}` +
+  `@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`;
 
 // todo comment-out when pushing to github:
-const DATABASE_URL =
-  process.env.DATABASE_URL || "postgres://localhost/medusa-store";
+// const DATABASE_URL =
+//   process.env.DATABASE_URL || "postgres://localhost/medusa-store";
 
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
 
@@ -60,23 +60,23 @@ const plugins = [
   },
 
   // todo: uncomment before pushing to github
-  // {
-  //   resolve: `medusa-file-spaces`,
-  //   options: {
-  //     spaces_url: process.env.SPACE_URL,
-  //     bucket: process.env.SPACE_BUCKET,
-  //     endpoint: process.env.SPACE_ENDPOINT,
-  //     access_key_id: process.env.SPACE_ACCESS_KEY_ID,
-  //     secret_access_key: process.env.SPACE_SECRET_ACCESS_KEY,
-  //   },
-  // },
-  // todo comment-out before pushing to github
   {
-    resolve: `@medusajs/file-local`,
+    resolve: `medusa-file-spaces`,
     options: {
-      upload_dir: "uploads/2024",
+      spaces_url: process.env.SPACE_URL,
+      bucket: process.env.SPACE_BUCKET,
+      endpoint: process.env.SPACE_ENDPOINT,
+      access_key_id: process.env.SPACE_ACCESS_KEY_ID,
+      secret_access_key: process.env.SPACE_SECRET_ACCESS_KEY,
     },
   },
+  // todo comment-out before pushing to github
+  // {
+  //   resolve: `@medusajs/file-local`,
+  //   options: {
+  //     upload_dir: "uploads/2024",
+  //   },
+  // },
 
   // To enable the admin plugin, uncomment the following lines and run `yarn add @medusajs/admin`
   {
@@ -117,7 +117,7 @@ const projectConfig = {
   redis: REDIS_URL,
   redis_url: process.env.REDIS_URL,
   // todo uncomment when pushing to github:
-  // database_extra: { ssl: { rejectUnauthorized: false } },
+  database_extra: { ssl: { rejectUnauthorized: false } },
 };
 
 /** @type {import('@medusajs/medusa').ConfigModule} */
