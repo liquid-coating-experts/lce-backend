@@ -1879,7 +1879,7 @@
   resolved "https://registry.yarnpkg.com/@medusajs/types/-/types-1.11.17.tgz#e78104bdb44fd8b957bd9aa88e2eb294299f1bfe"
   integrity sha512-EKrG1aU0b6es1KlKhCSU2ptwJuHVB0EEiHd35IaIcDyx8ZVjIMscpDOhCSl5efAiRlr3I5kqWIbdSakDIF2Smw==
 
-"@medusajs/utils@^1.11.10":
+"@medusajs/utils@^1.11.10", "@medusajs/utils@^1.11.3":
   version "1.11.10"
   resolved "https://registry.yarnpkg.com/@medusajs/utils/-/utils-1.11.10.tgz#1f3aefe767b4ea24d9b5a842e71e29e6b324d347"
   integrity sha512-L0REq+CEArgr1b7P4lddSKHQGrx0IA7exTrHkEGT6b6h2GXT8MRXO4YfFi8PRBZkMu36zDSnfPBIGbjvnpGYsg==
@@ -6820,12 +6820,12 @@ medusa-payment-manual@^1.0.23:
   resolved "https://registry.yarnpkg.com/medusa-payment-manual/-/medusa-payment-manual-1.0.25.tgz#9d93dbfc13696211993ebe68f87a1acb69f52569"
   integrity sha512-TMwAcI9MU3kDbBaY2WydurG2Y3ZCB+MGiRpGiGkhrvPLyzQ2qPAL13sb8cWXyuLWRdyHB1INGSh+WN26z4SHNw==
 
-medusa-payment-stripe@^6.0.1:
-  version "6.0.11"
-  resolved "https://registry.yarnpkg.com/medusa-payment-stripe/-/medusa-payment-stripe-6.0.11.tgz#c519b0a72e9f8f2dadf570d53dbf811d3cc9195b"
-  integrity sha512-IRCIWmhz4sWcWZDcYLr3uz9s1BjC0JuWSMT1CtZPijjU3UmkhwtjRUb4xcHB90fNnbNsU5vCk/0K17K0soOUvA==
+medusa-payment-stripe@6.0.7:
+  version "6.0.7"
+  resolved "https://registry.yarnpkg.com/medusa-payment-stripe/-/medusa-payment-stripe-6.0.7.tgz#b9a8357f1fdd5e0a7e8798855578882a364ae416"
+  integrity sha512-qpSSHJDW3+yCF7jY/53XiZeuJY5gXMFA33BAh0ipAlBC2OAqM/ZPYiiZNtDb8RaTYTTikhBOIqHxCaYYoFaPkw==
   dependencies:
-    "@medusajs/utils" "^1.11.10"
+    "@medusajs/utils" "^1.11.3"
     body-parser "^1.19.0"
     express "^4.17.1"
     stripe "^11.10.0"
